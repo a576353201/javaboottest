@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tb.springboot.data.dao.test.AccountsinfoDao">
+
+    <resultMap id="BaseResultMap" type="tb.springboot.data.entity.test.Accountsinfo">
+        <!--@Table AccountsInfo-->
+        <result property="userid" column="UserID" jdbcType="INTEGER"/>
+        <result property="gameid" column="GameID" jdbcType="INTEGER"/>
+        <result property="protectid" column="ProtectID" jdbcType="INTEGER"/>
+        <result property="passwordid" column="PasswordID" jdbcType="INTEGER"/>
+        <result property="spreaderid" column="SpreaderID" jdbcType="INTEGER"/>
+        <result property="accounts" column="Accounts" jdbcType="VARCHAR"/>
+        <result property="nickname" column="NickName" jdbcType="VARCHAR"/>
+        <result property="regaccounts" column="RegAccounts" jdbcType="VARCHAR"/>
+        <result property="underwrite" column="UnderWrite" jdbcType="VARCHAR"/>
+        <result property="passportid" column="PassPortID" jdbcType="VARCHAR"/>
+        <result property="compellation" column="Compellation" jdbcType="VARCHAR"/>
+        <result property="logonpass" column="LogonPass" jdbcType="VARCHAR"/>
+        <result property="insurepass" column="InsurePass" jdbcType="VARCHAR"/>
+        <result property="dynamicpass" column="DynamicPass" jdbcType="VARCHAR"/>
+        <result property="dynamicpasstime" column="DynamicPassTime" jdbcType="TIMESTAMP"/>
+        <result property="faceid" column="FaceID" jdbcType="INTEGER"/>
+        <result property="customid" column="CustomID" jdbcType="INTEGER"/>
+        <result property="present" column="Present" jdbcType="INTEGER"/>
+        <result property="usermedal" column="UserMedal" jdbcType="INTEGER"/>
+        <result property="experience" column="Experience" jdbcType="INTEGER"/>
+        <result property="growlevelid" column="GrowLevelID" jdbcType="INTEGER"/>
+        <result property="loveliness" column="LoveLiness" jdbcType="INTEGER"/>
+        <result property="userright" column="UserRight" jdbcType="INTEGER"/>
+        <result property="masterright" column="MasterRight" jdbcType="INTEGER"/>
+        <result property="serviceright" column="ServiceRight" jdbcType="INTEGER"/>
+        <result property="masterorder" column="MasterOrder" jdbcType="INTEGER"/>
+        <result property="memberorder" column="MemberOrder" jdbcType="INTEGER"/>
+        <result property="memberoverdate" column="MemberOverDate" jdbcType="TIMESTAMP"/>
+        <result property="memberswitchdate" column="MemberSwitchDate" jdbcType="TIMESTAMP"/>
+        <result property="customfacever" column="CustomFaceVer" jdbcType="INTEGER"/>
+        <result property="gender" column="Gender" jdbcType="INTEGER"/>
+        <result property="nullity" column="Nullity" jdbcType="INTEGER"/>
+        <result property="nullityoverdate" column="NullityOverDate" jdbcType="TIMESTAMP"/>
+        <result property="stundown" column="StunDown" jdbcType="INTEGER"/>
+        <result property="moormachine" column="MoorMachine" jdbcType="INTEGER"/>
+        <result property="isandroid" column="IsAndroid" jdbcType="INTEGER"/>
+        <result property="weblogontimes" column="WebLogonTimes" jdbcType="INTEGER"/>
+        <result property="gamelogontimes" column="GameLogonTimes" jdbcType="INTEGER"/>
+        <result property="playtimecount" column="PlayTimeCount" jdbcType="INTEGER"/>
+        <result property="onlinetimecount" column="OnLineTimeCount" jdbcType="INTEGER"/>
+        <result property="lastlogonip" column="LastLogonIP" jdbcType="VARCHAR"/>
+        <result property="lastlogondate" column="LastLogonDate" jdbcType="TIMESTAMP"/>
+        <result property="lastlogonmobile" column="LastLogonMobile" jdbcType="VARCHAR"/>
+        <result property="lastlogonmachine" column="LastLogonMachine" jdbcType="VARCHAR"/>
+        <result property="registerip" column="RegisterIP" jdbcType="VARCHAR"/>
+        <result property="registerdate" column="RegisterDate" jdbcType="TIMESTAMP"/>
+        <result property="registermobile" column="RegisterMobile" jdbcType="VARCHAR"/>
+        <result property="registermachine" column="RegisterMachine" jdbcType="VARCHAR"/>
+        <result property="registerorigin" column="RegisterOrigin" jdbcType="INTEGER"/>
+        <result property="platformid" column="PlatformID" jdbcType="INTEGER"/>
+        <result property="useruin" column="UserUin" jdbcType="VARCHAR"/>
+        <result property="rankid" column="RankID" jdbcType="INTEGER"/>
+        <result property="agentid" column="AgentID" jdbcType="INTEGER"/>
+        <result property="parentid" column="ParentID" jdbcType="INTEGER"/>
+        <result property="usertype" column="UserType" jdbcType="INTEGER"/>
+        <result property="advertiser" column="Advertiser" jdbcType="VARCHAR"/>
+        <result property="lastlogonipaddress" column="LastLogonIPAddress" jdbcType="VARCHAR"/>
+        <result property="advertplat" column="AdvertPlat" jdbcType="VARCHAR"/>
+        <result property="lastlogoorigin" column="LastLogoOrigin" jdbcType="INTEGER"/>
+        <result property="registermobiledate" column="RegisterMobileDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          UserID, GameID, ProtectID, PasswordID, SpreaderID, Accounts, NickName, RegAccounts, UnderWrite, PassPortID, Compellation, LogonPass, InsurePass, DynamicPass, DynamicPassTime, FaceID, CustomID, Present, UserMedal, Experience, GrowLevelID, LoveLiness, UserRight, MasterRight, ServiceRight, MasterOrder, MemberOrder, MemberOverDate, MemberSwitchDate, CustomFaceVer, Gender, Nullity, NullityOverDate, StunDown, MoorMachine, IsAndroid, WebLogonTimes, GameLogonTimes, PlayTimeCount, OnLineTimeCount, LastLogonIP, LastLogonDate, LastLogonMobile, LastLogonMachine, RegisterIP, RegisterDate, RegisterMobile, RegisterMachine, RegisterOrigin, PlatformID, UserUin, RankID, AgentID, ParentID, UserType, Advertiser, LastLogonIPAddress, AdvertPlat, LastLogoOrigin, RegisterMobileDate
+        from dbo.AccountsInfo
+        where UserID = #{userid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          UserID, GameID, ProtectID, PasswordID, SpreaderID, Accounts, NickName, RegAccounts, UnderWrite, PassPortID, Compellation, LogonPass, InsurePass, DynamicPass, DynamicPassTime, FaceID, CustomID, Present, UserMedal, Experience, GrowLevelID, LoveLiness, UserRight, MasterRight, ServiceRight, MasterOrder, MemberOrder, MemberOverDate, MemberSwitchDate, CustomFaceVer, Gender, Nullity, NullityOverDate, StunDown, MoorMachine, IsAndroid, WebLogonTimes, GameLogonTimes, PlayTimeCount, OnLineTimeCount, LastLogonIP, LastLogonDate, LastLogonMobile, LastLogonMachine, RegisterIP, RegisterDate, RegisterMobile, RegisterMachine, RegisterOrigin, PlatformID, UserUin, RankID, AgentID, ParentID, UserType, Advertiser, LastLogonIPAddress, AdvertPlat, LastLogoOrigin, RegisterMobileDate
+        from dbo.AccountsInfo
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          UserID, GameID, ProtectID, PasswordID, SpreaderID, Accounts, NickName, RegAccounts, UnderWrite, PassPortID, Compellation, LogonPass, InsurePass, DynamicPass, DynamicPassTime, FaceID, CustomID, Present, UserMedal, Experience, GrowLevelID, LoveLiness, UserRight, MasterRight, ServiceRight, MasterOrder, MemberOrder, MemberOverDate, MemberSwitchDate, CustomFaceVer, Gender, Nullity, NullityOverDate, StunDown, MoorMachine, IsAndroid, WebLogonTimes, GameLogonTimes, PlayTimeCount, OnLineTimeCount, LastLogonIP, LastLogonDate, LastLogonMobile, LastLogonMachine, RegisterIP, RegisterDate, RegisterMobile, RegisterMachine, RegisterOrigin, PlatformID, UserUin, RankID, AgentID, ParentID, UserType, Advertiser, LastLogonIPAddress, AdvertPlat, LastLogoOrigin, RegisterMobileDate
+        from dbo.AccountsInfo
+        <where>
+            <if test="userid != null">
+                and UserID = #{userid}
+            </if>
+            <if test="gameid != null">
+                and GameID = #{gameid}
+            </if>
+            <if test="protectid != null">
+                and ProtectID = #{protectid}
+            </if>
+            <if test="passwordid != null">
+                and PasswordID = #{passwordid}
+            </if>
+            <if test="spreaderid != null">
+                and SpreaderID = #{spreaderid}
+            </if>
+            <if test="accounts != null and accounts != ''">
+                and Accounts = #{accounts}
+            </if>
+            <if test="nickname != null and nickname != ''">
+                and NickName = #{nickname}
+            </if>
+            <if test="regaccounts != null and regaccounts != ''">
+                and RegAccounts = #{regaccounts}
+            </if>
+            <if test="underwrite != null and underwrite != ''">
+                and UnderWrite = #{underwrite}
+            </if>
+            <if test="passportid != null and passportid != ''">
+                and PassPortID = #{passportid}
+            </if>
+            <if test="compellation != null and compellation != ''">
+                and Compellation = #{compellation}
+            </if>
+            <if test="logonpass != null and logonpass != ''">
+                and LogonPass = #{logonpass}
+            </if>
+            <if test="insurepass != null and insurepass != ''">
+                and InsurePass = #{insurepass}
+            </if>
+            <if test="dynamicpass != null and dynamicpass != ''">
+                and DynamicPass = #{dynamicpass}
+            </if>
+            <if test="dynamicpasstime != null">
+                and DynamicPassTime = #{dynamicpasstime}
+            </if>
+            <if test="faceid != null">
+                and FaceID = #{faceid}
+            </if>
+            <if test="customid != null">
+                and CustomID = #{customid}
+            </if>
+            <if test="present != null">
+                and Present = #{present}
+            </if>
+            <if test="usermedal != null">
+                and UserMedal = #{usermedal}
+            </if>
+            <if test="experience != null">
+                and Experience = #{experience}
+            </if>
+            <if test="growlevelid != null">
+                and GrowLevelID = #{growlevelid}
+            </if>
+            <if test="loveliness != null">
+                and LoveLiness = #{loveliness}
+            </if>
+            <if test="userright != null">
+                and UserRight = #{userright}
+            </if>
+            <if test="masterright != null">
+                and MasterRight = #{masterright}
+            </if>
+            <if test="serviceright != null">
+                and ServiceRight = #{serviceright}
+            </if>
+            <if test="masterorder != null">
+                and MasterOrder = #{masterorder}
+            </if>
+            <if test="memberorder != null">
+                and MemberOrder = #{memberorder}
+            </if>
+            <if test="memberoverdate != null">
+                and MemberOverDate = #{memberoverdate}
+            </if>
+            <if test="memberswitchdate != null">
+                and MemberSwitchDate = #{memberswitchdate}
+            </if>
+            <if test="customfacever != null">
+                and CustomFaceVer = #{customfacever}
+            </if>
+            <if test="gender != null">
+                and Gender = #{gender}
+            </if>
+            <if test="nullity != null">
+                and Nullity = #{nullity}
+            </if>
+            <if test="nullityoverdate != null">
+                and NullityOverDate = #{nullityoverdate}
+            </if>
+            <if test="stundown != null">
+                and StunDown = #{stundown}
+            </if>
+            <if test="moormachine != null">
+                and MoorMachine = #{moormachine}
+            </if>
+            <if test="isandroid != null">
+                and IsAndroid = #{isandroid}
+            </if>
+            <if test="weblogontimes != null">
+                and WebLogonTimes = #{weblogontimes}
+            </if>
+            <if test="gamelogontimes != null">
+                and GameLogonTimes = #{gamelogontimes}
+            </if>
+            <if test="playtimecount != null">
+                and PlayTimeCount = #{playtimecount}
+            </if>
+            <if test="onlinetimecount != null">
+                and OnLineTimeCount = #{onlinetimecount}
+            </if>
+            <if test="lastlogonip != null and lastlogonip != ''">
+                and LastLogonIP = #{lastlogonip}
+            </if>
+            <if test="lastlogondate != null">
+                and LastLogonDate = #{lastlogondate}
+            </if>
+            <if test="lastlogonmobile != null and lastlogonmobile != ''">
+                and LastLogonMobile = #{lastlogonmobile}
+            </if>
+            <if test="lastlogonmachine != null and lastlogonmachine != ''">
+                and LastLogonMachine = #{lastlogonmachine}
+            </if>
+            <if test="registerip != null and registerip != ''">
+                and RegisterIP = #{registerip}
+            </if>
+            <if test="registerdate != null">
+                and RegisterDate = #{registerdate}
+            </if>
+            <if test="registermobile != null and registermobile != ''">
+                and RegisterMobile = #{registermobile}
+            </if>
+            <if test="registermachine != null and registermachine != ''">
+                and RegisterMachine = #{registermachine}
+            </if>
+            <if test="registerorigin != null">
+                and RegisterOrigin = #{registerorigin}
+            </if>
+            <if test="platformid != null">
+                and PlatformID = #{platformid}
+            </if>
+            <if test="useruin != null and useruin != ''">
+                and UserUin = #{useruin}
+            </if>
+            <if test="rankid != null">
+                and RankID = #{rankid}
+            </if>
+            <if test="agentid != null">
+                and AgentID = #{agentid}
+            </if>
+            <if test="parentid != null">
+                and ParentID = #{parentid}
+            </if>
+            <if test="usertype != null">
+                and UserType = #{usertype}
+            </if>
+            <if test="advertiser != null and advertiser != ''">
+                and Advertiser = #{advertiser}
+            </if>
+            <if test="lastlogonipaddress != null and lastlogonipaddress != ''">
+                and LastLogonIPAddress = #{lastlogonipaddress}
+            </if>
+            <if test="advertplat != null and advertplat != ''">
+                and AdvertPlat = #{advertplat}
+            </if>
+            <if test="lastlogoorigin != null">
+                and LastLogoOrigin = #{lastlogoorigin}
+            </if>
+            <if test="registermobiledate != null">
+                and RegisterMobileDate = #{registermobiledate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="userid" useGeneratedKeys="true">
+        insert into dbo.AccountsInfo(GameID, ProtectID, PasswordID, SpreaderID, Accounts, NickName, RegAccounts, UnderWrite, PassPortID, Compellation, LogonPass, InsurePass, DynamicPass, DynamicPassTime, FaceID, CustomID, Present, UserMedal, Experience, GrowLevelID, LoveLiness, UserRight, MasterRight, ServiceRight, MasterOrder, MemberOrder, MemberOverDate, MemberSwitchDate, CustomFaceVer, Gender, Nullity, NullityOverDate, StunDown, MoorMachine, IsAndroid, WebLogonTimes, GameLogonTimes, PlayTimeCount, OnLineTimeCount, LastLogonIP, LastLogonDate, LastLogonMobile, LastLogonMachine, RegisterIP, RegisterDate, RegisterMobile, RegisterMachine, RegisterOrigin, PlatformID, UserUin, RankID, AgentID, ParentID, UserType, Advertiser, LastLogonIPAddress, AdvertPlat, LastLogoOrigin, RegisterMobileDate)
+        values (#{gameid}, #{protectid}, #{passwordid}, #{spreaderid}, #{accounts}, #{nickname}, #{regaccounts}, #{underwrite}, #{passportid}, #{compellation}, #{logonpass}, #{insurepass}, #{dynamicpass}, #{dynamicpasstime}, #{faceid}, #{customid}, #{present}, #{usermedal}, #{experience}, #{growlevelid}, #{loveliness}, #{userright}, #{masterright}, #{serviceright}, #{masterorder}, #{memberorder}, #{memberoverdate}, #{memberswitchdate}, #{customfacever}, #{gender}, #{nullity}, #{nullityoverdate}, #{stundown}, #{moormachine}, #{isandroid}, #{weblogontimes}, #{gamelogontimes}, #{playtimecount}, #{onlinetimecount}, #{lastlogonip}, #{lastlogondate}, #{lastlogonmobile}, #{lastlogonmachine}, #{registerip}, #{registerdate}, #{registermobile}, #{registermachine}, #{registerorigin}, #{platformid}, #{useruin}, #{rankid}, #{agentid}, #{parentid}, #{usertype}, #{advertiser}, #{lastlogonipaddress}, #{advertplat}, #{lastlogoorigin}, #{registermobiledate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update dbo.AccountsInfo
+        <set>
+            <if test="gameid != null">
+                GameID = #{gameid},
+            </if>
+            <if test="protectid != null">
+                ProtectID = #{protectid},
+            </if>
+            <if test="passwordid != null">
+                PasswordID = #{passwordid},
+            </if>
+            <if test="spreaderid != null">
+                SpreaderID = #{spreaderid},
+            </if>
+            <if test="accounts != null and accounts != ''">
+                Accounts = #{accounts},
+            </if>
+            <if test="nickname != null and nickname != ''">
+                NickName = #{nickname},
+            </if>
+            <if test="regaccounts != null and regaccounts != ''">
+                RegAccounts = #{regaccounts},
+            </if>
+            <if test="underwrite != null and underwrite != ''">
+                UnderWrite = #{underwrite},
+            </if>
+            <if test="passportid != null and passportid != ''">
+                PassPortID = #{passportid},
+            </if>
+            <if test="compellation != null and compellation != ''">
+                Compellation = #{compellation},
+            </if>
+            <if test="logonpass != null and logonpass != ''">
+                LogonPass = #{logonpass},
+            </if>
+            <if test="insurepass != null and insurepass != ''">
+                InsurePass = #{insurepass},
+            </if>
+            <if test="dynamicpass != null and dynamicpass != ''">
+                DynamicPass = #{dynamicpass},
+            </if>
+            <if test="dynamicpasstime != null">
+                DynamicPassTime = #{dynamicpasstime},
+            </if>
+            <if test="faceid != null">
+                FaceID = #{faceid},
+            </if>
+            <if test="customid != null">
+                CustomID = #{customid},
+            </if>
+            <if test="present != null">
+                Present = #{present},
+            </if>
+            <if test="usermedal != null">
+                UserMedal = #{usermedal},
+            </if>
+            <if test="experience != null">
+                Experience = #{experience},
+            </if>
+            <if test="growlevelid != null">
+                GrowLevelID = #{growlevelid},
+            </if>
+            <if test="loveliness != null">
+                LoveLiness = #{loveliness},
+            </if>
+            <if test="userright != null">
+                UserRight = #{userright},
+            </if>
+            <if test="masterright != null">
+                MasterRight = #{masterright},
+            </if>
+            <if test="serviceright != null">
+                ServiceRight = #{serviceright},
+            </if>
+            <if test="masterorder != null">
+                MasterOrder = #{masterorder},
+            </if>
+            <if test="memberorder != null">
+                MemberOrder = #{memberorder},
+            </if>
+            <if test="memberoverdate != null">
+                MemberOverDate = #{memberoverdate},
+            </if>
+            <if test="memberswitchdate != null">
+                MemberSwitchDate = #{memberswitchdate},
+            </if>
+            <if test="customfacever != null">
+                CustomFaceVer = #{customfacever},
+            </if>
+            <if test="gender != null">
+                Gender = #{gender},
+            </if>
+            <if test="nullity != null">
+                Nullity = #{nullity},
+            </if>
+            <if test="nullityoverdate != null">
+                NullityOverDate = #{nullityoverdate},
+            </if>
+            <if test="stundown != null">
+                StunDown = #{stundown},
+            </if>
+            <if test="moormachine != null">
+                MoorMachine = #{moormachine},
+            </if>
+            <if test="isandroid != null">
+                IsAndroid = #{isandroid},
+            </if>
+            <if test="weblogontimes != null">
+                WebLogonTimes = #{weblogontimes},
+            </if>
+            <if test="gamelogontimes != null">
+                GameLogonTimes = #{gamelogontimes},
+            </if>
+            <if test="playtimecount != null">
+                PlayTimeCount = #{playtimecount},
+            </if>
+            <if test="onlinetimecount != null">
+                OnLineTimeCount = #{onlinetimecount},
+            </if>
+            <if test="lastlogonip != null and lastlogonip != ''">
+                LastLogonIP = #{lastlogonip},
+            </if>
+            <if test="lastlogondate != null">
+                LastLogonDate = #{lastlogondate},
+            </if>
+            <if test="lastlogonmobile != null and lastlogonmobile != ''">
+                LastLogonMobile = #{lastlogonmobile},
+            </if>
+            <if test="lastlogonmachine != null and lastlogonmachine != ''">
+                LastLogonMachine = #{lastlogonmachine},
+            </if>
+            <if test="registerip != null and registerip != ''">
+                RegisterIP = #{registerip},
+            </if>
+            <if test="registerdate != null">
+                RegisterDate = #{registerdate},
+            </if>
+            <if test="registermobile != null and registermobile != ''">
+                RegisterMobile = #{registermobile},
+            </if>
+            <if test="registermachine != null and registermachine != ''">
+                RegisterMachine = #{registermachine},
+            </if>
+            <if test="registerorigin != null">
+                RegisterOrigin = #{registerorigin},
+            </if>
+            <if test="platformid != null">
+                PlatformID = #{platformid},
+            </if>
+            <if test="useruin != null and useruin != ''">
+                UserUin = #{useruin},
+            </if>
+            <if test="rankid != null">
+                RankID = #{rankid},
+            </if>
+            <if test="agentid != null">
+                AgentID = #{agentid},
+            </if>
+            <if test="parentid != null">
+                ParentID = #{parentid},
+            </if>
+            <if test="usertype != null">
+                UserType = #{usertype},
+            </if>
+            <if test="advertiser != null and advertiser != ''">
+                Advertiser = #{advertiser},
+            </if>
+            <if test="lastlogonipaddress != null and lastlogonipaddress != ''">
+                LastLogonIPAddress = #{lastlogonipaddress},
+            </if>
+            <if test="advertplat != null and advertplat != ''">
+                AdvertPlat = #{advertplat},
+            </if>
+            <if test="lastlogoorigin != null">
+                LastLogoOrigin = #{lastlogoorigin},
+            </if>
+            <if test="registermobiledate != null">
+                RegisterMobileDate = #{registermobiledate},
+            </if>
+        </set>
+        where UserID = #{userid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from dbo.AccountsInfo where UserID = #{userid}
+    </delete>
+
+</mapper>
